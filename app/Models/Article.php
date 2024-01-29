@@ -26,8 +26,8 @@ class Article extends Model
 
     public function isAuthor($user)
     {
-        // я бы подобное перехватывал исключением try catch на несоответсвие типа, а тип бы указал во входных переменных у функции
-        if(!($user instanceof User)) 
+        
+        if(!empty($user) &&  !($user instanceof User)) 
         {
             return 'mismatch';
         }
